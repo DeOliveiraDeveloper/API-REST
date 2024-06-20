@@ -1,8 +1,20 @@
-import {Router} from 'express'
-import { teste } from './controladores/controladores'
+const {Router} = require('express')
+const { listar } = require('./controladores/instrutores')
 
 const rotas = Router()
 
-rotas.get('/', teste)
+rotas.get('/', () =>{
+    return 'Bem vindo a API de Instrutores'
+})
 
-export default rotas
+// listar todos instrutores;
+
+
+// detalhar as informações de um instrutor
+// editar um instrutor
+// excluir um instrutor
+
+// cadastrar uma aula para um instrutor
+// excluir uma aula para um instrutor
+
+module.exports = rotas
