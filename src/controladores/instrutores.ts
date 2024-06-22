@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 
+
+let proximoID = 5
+
 type TInstrutores = {
     id: number;
     nome: string;
@@ -29,4 +32,38 @@ export function detalhar(req:Request, res:Response) {
     }
     
     return res.status(200).json(instrutor)
+}
+
+export function cadastrar(req:Request, res:Response) {
+    console.log(req.body);
+    
+    const { nome, idade } = req.body
+
+    const novoInstrutor = {
+        id: proximoID++,
+        nome,
+        idade
+    }
+
+    instrutores.push(novoInstrutor)
+
+    return res.status(201).json(novoInstrutor)
+}
+
+export function atualizar(req:Request, res:Response) {
+    const {nome, idade} = req.body
+    const { id } = req.params
+
+    const instrutor = instrutores.find((item) => {
+        return item.id === Number(id)
+    })
+
+    if (!instrutor) {
+        return res.status(404).json({ mensagem: "Instrutor não encontrado" })
+    }
+
+    instrutor.nome = nome;
+    instrutor.idade = idade
+
+    return res.status(204).send()
 }
