@@ -20,6 +20,8 @@ rotas.patch('/instrutores/:id/alterarEmail', atualizarEmail)
 
 // excluir um instrutor
 rotas.delete('/instrutores/:id', excluir)
+
+// cadastrar uma aula para um instrutor 
 // excluir uma aula para um instrutor
 
 export default rotas
