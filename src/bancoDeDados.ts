@@ -14,17 +14,21 @@ type TInstrutores = {
 
 type TBancoDeDados = {
     proximoID: TId;
+    proximoIDAula: TId
     instrutores: TInstrutores[]
 }
 
 export const bancoDeDados: TBancoDeDados = {
     proximoID: 5,
+    proximoIDAula: 2,
     instrutores: [
         { 
             id: 1, 
             nome: "João", 
             email: 30,
-            aulas: []
+            aulas: [
+                { id: 1, nome: 'Aula de API REST'}
+            ]
         },
         { 
             id: 2, 
