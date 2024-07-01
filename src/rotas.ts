@@ -26,5 +26,6 @@ rotas.delete('/instrutores/:id', excluir)
 rotas.post('/instrutores/:id/aulas', cadastrarAula)
 
 // excluir uma aula para um instrutor
+rotas.delete('/instrutores/:id/aulas/:idAula', excluir)
 
 export default rotas
